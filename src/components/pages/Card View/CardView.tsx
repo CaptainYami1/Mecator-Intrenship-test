@@ -136,7 +136,7 @@ const CardView = () => {
           </div>
         </div>
 
-        <div className="max-w-[463px] flex flex-col items-center gap-4 mt-30 mx-auto">
+        <div className="max-w-[463px] flex flex-col items-center gap-4 mt-20 mx-auto">
           <Prybtn
             text="Activate Card"
             onClick={() => setCloseModal(false)}

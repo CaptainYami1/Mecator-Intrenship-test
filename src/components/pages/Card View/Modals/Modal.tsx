@@ -195,10 +195,10 @@ const Modal = ({
 
           {/*Mobile */}
           <div className="fixed justify-center content-end w-auto  top-0 left-0 right-0 bottom-0 z-50 sm:hidden  ">
-            <div className="bg-white  content-end rounded-t-2xl   py-10  mx-auto flex flex-col ">
+            <div className="bg-white  content-end rounded-t-2xl   py-4  mx-auto flex flex-col ">
               <button
                 title="close"
-                className="p-1.5 w-fit mx-15 mb-4 border border-neutral-100 self-end rounded-md"
+                className="p-1.5 w-fit mx-10 mb-4 border border-neutral-100 self-end rounded-md"
                 onClick={() => {
                   setCloseModal(true);
                   setPin1Digits([]);
