@@ -3,7 +3,7 @@ import Prybtn from "../../reuseables/Prybtn";
 import Footer from "../../reuseables/Footer/Footer";
 import SectionTitle from "../../reuseables/SectionTitle";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useEffect, useState } from "react";
 import { MyContext } from "../../../context/MyContext";
 
 const Otp = () => {
@@ -12,12 +12,25 @@ const Otp = () => {
   const accountNumber = state;
   const { setAccountNumber } = useContext(MyContext)!;
 
+  const[error, setError] = useState("")
   const handleSubmit = () => {
-    navigate("/Card-View");
-    setAccountNumber(accountNumber);
-  };
-
+  const otp = inputRefs.current.map((input) => input?.value).join("");
+  if (otp.length !== 6) {
+    setError("Please enter the full OTP.");
+    return;
+  }
+  setAccountNumber(accountNumber);
+  navigate("/Card-View");
+};
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const [timeLeft, setTimeLeft] = useState(59);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+  }, 1000);
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <>
@@ -39,15 +52,16 @@ const Otp = () => {
                 {Array.from({ length: 6 }).map((_, idx) => (
                   <input
                     key={idx}
-                    type="text"
+                    type="tel"
                     inputMode="numeric"
                     maxLength={1}
                     className="w-12 h-12 sm:w-14 sm:h-14 text-lg text-center border border-gray-300 rounded-md shadow-md"
                     title="otp"
+                     pattern="[0-9]*"
                     ref={(el) => { inputRefs.current[idx] = el; }}
                     onChange={(e) => {
                       const value = e.target.value;
-                      if (value && idx < 5) {
+                      if (/^\d$/.test(value) && idx < 5) {
                         inputRefs.current[idx + 1]?.focus();
                       }
                     }}
@@ -63,7 +77,8 @@ const Otp = () => {
                   />
                 ))}
               </div>
-              <p className="w-fit">00:59</p>
+              <p className="w-fit">{`00:${timeLeft.toString().padStart(2, "0")}`}</p>
+              <p className="mt-4 text-red-500">{error}</p>
 
               <div className=" flex flex-col items-center gap-4 mt-15">
                 <Prybtn text="Continue" onClick={() => handleSubmit()} />
