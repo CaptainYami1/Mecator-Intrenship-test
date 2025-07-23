@@ -70,13 +70,11 @@ const Laptopsize = ({
       return;
     }
 
-   
     setPin1Digits((prev) => [...prev, value]);
 
     if (pin1Digits.length < 4) {
       const newPin1 = [...pin1Digits, value];
       setPin1Digits(newPin1);
-    
     } else if (pin2Digits.length < 4) {
       const newPin2 = [...pin2Digits, value];
       setPin2Digits(newPin2);
@@ -85,33 +83,33 @@ const Laptopsize = ({
       const pin1 = pin1Digits.slice(0, 4).join("");
       const pin2 = [...pin2Digits, value].join("");
 
-     
-
       if (pin2.length === 4) {
         if (pin1 !== pin2) {
-          setMobileError("PINs do not match");
+          setTimeout(() => {
+            setMobileError("PINs do not match");
+            setPin2Digits([]);
+          }, 300);
+
           return;
-        }else{
+        } else {
+          setMobileError(""); // Clear any previous error
 
-        setMobileError(""); // Clear any previous error
+          // Save to sessionStorage
+          const storageKeyMap: { [key: string]: string } = {
+            "verve-naira": "verve-pin",
+            "master-pounds": "master-pounds-pin",
+            "platinum-naira": "platinum-naira-pin",
+            "platinum-usd": "platinum-usd-pin",
+            "master-usd": "master-usd-pin",
+          };
 
-        // Save to sessionStorage
-        const storageKeyMap: { [key: string]: string } = {
-          "verve-naira": "verve-pin",
-          "master-pounds": "master-pounds-pin",
-          "platinum-naira": "platinum-naira-pin",
-          "platinum-usd": "platinum-usd-pin",
-          "master-usd": "master-usd-pin",
-        };
+          const key = storageKeyMap[activeCardId];
+          if (key) sessionStorage.setItem(key, pin1);
 
-        const key = storageKeyMap[activeCardId];
-        if (key) sessionStorage.setItem(key, pin1);
-
-        setTimeout(() => setPinStatus(true), 300);
-        setPin1Digits([]);
-      setPin2Digits([]);
-    }
-
+          setTimeout(() => setPinStatus(true), 300);
+          setPin1Digits([]);
+          setPin2Digits([]);
+        }
       }
     }
   };
@@ -135,7 +133,13 @@ const Laptopsize = ({
               </p>
             </div>
 
-            <Prybtn text="Okay" onClick={() => {setCloseModal(true); setPinStatus(false)}} />
+            <Prybtn
+              text="Okay"
+              onClick={() => {
+                setCloseModal(true);
+                setPinStatus(false);
+              }}
+            />
           </div>
         </div>
       ) : (
@@ -191,35 +195,97 @@ const Laptopsize = ({
 
           {/*Mobile */}
           <div className="fixed justify-center content-end w-auto  top-0 left-0 right-0 bottom-0 z-50 sm:hidden  ">
-            <div className="bg-white items-center content-end rounded-t-2xl   h-[66%]  py-10  mx-auto flex flex-col ">
-              <div className="text-center">
-                <h2 className="mb-12.5 font-medium text-xl">
-                  {pin1Digits.length < 4 ? "Create PIN" : "Confirm PIN"}
-                </h2>
-                <div className="mb-15">
-                  <p className="font-medium text-sm mb-3">
-                    {pin1Digits.length < 4 ? "Choose" : "Confirm"} 4-digit PIN
-                  </p>
+            <div className="bg-white  content-end rounded-t-2xl   h-[66%]  py-10  mx-auto flex flex-col ">
+              <button
+                title="close"
+                className="p-1.5 w-fit mx-15 mb-4 border border-neutral-100 self-end rounded-md"
+                onClick={() => {
+                  setCloseModal(true);
+                  setPin1Digits([]);
+                  setPin2Digits([]);
+                  
+                }}
+              >
+                <IoMdClose />
+              </button>
+              <div className="flex flex-col items-center">
+                <div className="text-center">
+                  <h2 className="mb-12.5 font-medium text-xl">
+                    {pin1Digits.length < 4 ? "Create PIN" : "Confirm PIN"}
+                  </h2>
+                  <div className="mb-15">
+                    <p className="font-medium text-sm mb-3">
+                      {pin1Digits.length < 4 ? "Choose" : "Confirm"} 4-digit PIN
+                    </p>
 
-                  {pin1Digits.length < 4 ? (
-                    <div className="bg-[#f5f5f5] p-4 flex items-center gap-6 rounded-full">
-                      <span className={pin1Digits.length >= 1 ?"w-4 h-4 bg-black rounded-full":"w-4 h-4 bg-[#c2c3c9] rounded-full"}></span>
-                      <span className={pin1Digits.length >= 2 ?"w-4 h-4 bg-black rounded-full":"w-4 h-4 bg-[#c2c3c9] rounded-full"}></span>
-                      <span className={pin1Digits.length >= 3 ?"w-4 h-4 bg-black rounded-full":"w-4 h-4 bg-[#c2c3c9] rounded-full"}></span>
-                      <span className={pin1Digits.length >= 4 ?"w-4 h-4 bg-black rounded-full":"w-4 h-4 bg-[#c2c3c9] rounded-full"}></span>
-                    </div>
-                  ) : (
-                    <div className="bg-[#f5f5f5] p-4 flex items-center gap-6 rounded-full">
-                        <span className={pin2Digits.length >= 1 ?"w-4 h-4 bg-black rounded-full":"w-4 h-4 bg-[#c2c3c9] rounded-full"}></span>
-                        <span className={pin2Digits.length >= 2 ?"w-4 h-4 bg-black rounded-full":"w-4 h-4 bg-[#c2c3c9] rounded-full"}></span>
-                        <span className={pin2Digits.length >= 3 ?"w-4 h-4 bg-black rounded-full":"w-4 h-4 bg-[#c2c3c9] rounded-full"}></span>
-                        <span className={pin2Digits.length >= 4 ?"w-4 h-4 bg-black rounded-full":"w-4 h-4 bg-[#c2c3c9] rounded-full"}></span>
-                    </div>
-                  )}
-                  <p className="text-red-500">{mobileError}</p>
+                    {pin1Digits.length < 4 ? (
+                      <div className="bg-[#f5f5f5] p-4 flex items-center gap-6 rounded-full">
+                        <span
+                          className={
+                            pin1Digits.length >= 1
+                              ? "w-4 h-4 bg-black rounded-full"
+                              : "w-4 h-4 bg-[#c2c3c9] rounded-full"
+                          }
+                        ></span>
+                        <span
+                          className={
+                            pin1Digits.length >= 2
+                              ? "w-4 h-4 bg-black rounded-full"
+                              : "w-4 h-4 bg-[#c2c3c9] rounded-full"
+                          }
+                        ></span>
+                        <span
+                          className={
+                            pin1Digits.length >= 3
+                              ? "w-4 h-4 bg-black rounded-full"
+                              : "w-4 h-4 bg-[#c2c3c9] rounded-full"
+                          }
+                        ></span>
+                        <span
+                          className={
+                            pin1Digits.length >= 4
+                              ? "w-4 h-4 bg-black rounded-full"
+                              : "w-4 h-4 bg-[#c2c3c9] rounded-full"
+                          }
+                        ></span>
+                      </div>
+                    ) : (
+                      <div className="bg-[#f5f5f5] p-4 flex items-center gap-6 rounded-full">
+                        <span
+                          className={
+                            pin2Digits.length >= 1
+                              ? "w-4 h-4 bg-black rounded-full"
+                              : "w-4 h-4 bg-[#c2c3c9] rounded-full"
+                          }
+                        ></span>
+                        <span
+                          className={
+                            pin2Digits.length >= 2
+                              ? "w-4 h-4 bg-black rounded-full"
+                              : "w-4 h-4 bg-[#c2c3c9] rounded-full"
+                          }
+                        ></span>
+                        <span
+                          className={
+                            pin2Digits.length >= 3
+                              ? "w-4 h-4 bg-black rounded-full"
+                              : "w-4 h-4 bg-[#c2c3c9] rounded-full"
+                          }
+                        ></span>
+                        <span
+                          className={
+                            pin2Digits.length >= 4
+                              ? "w-4 h-4 bg-black rounded-full"
+                              : "w-4 h-4 bg-[#c2c3c9] rounded-full"
+                          }
+                        ></span>
+                      </div>
+                    )}
+                    <p className="text-red-500">{mobileError}</p>
+                  </div>
                 </div>
+                <Buttons onClick={handleButtonClick} />
               </div>
-              <Buttons onClick={handleButtonClick} />
             </div>
           </div>
         </div>

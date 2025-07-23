@@ -16,20 +16,25 @@ const Header = () => {
   const pathname = location.pathname;
   return (
     <>
-      <div className="">
-        <header className="flex justify-between items-center w-full mx-auto">
-          <div
-            onClick={() => navigate("/")}
+    
+      <div className="sm:hidden">
+        {pathname === "/Card-View" ? (<div className="w-max mx-auto md-hidden mb-3">
+          <Dash />
+        </div>
+        ): null}
+
+        <div
+            
             className={
               accountNumber
-                ? "justify-center sm:flex items-center gap-1.5 w-full sm:w-[263px]"
-                : "justify-items-center sm:flex items-center gap-1.5 w-full sm:w-[263px]"
+                ? "justify-center sm:flex items-center gap-1.5   "
+                : "justify-items-center sm:flex items-center gap-1.5 w- "
             }
           >
             <div
               className={
                 pathname === "/Card-View"
-                  ? "flex justify-center w-max"
+                  ? "flex justify-center mb-3  hidden"
                   : "flex items-center mb-3 sm:hidden w-full  justify-center  "
               }
             >
@@ -44,28 +49,33 @@ const Header = () => {
               </button>
               <div
                 className={
-                  pathname === "/Card-View" ? "w-full mx-auto mb-3 sm:hidden " : "mx-auto"
+                  pathname === "/Card-View" ? " flex justify-center w-full mb-3 md:hidden " : "mx-auto"
                 }
               >
                 <Dash />
               </div>
             </div>
-            <div className="flex items-center">
-              <img src={IbtcLogo} alt="" className="" />
+
+            </div>
+            </div>
+        <header className="flex justify-between items-center w-full mx-auto">
+          
+            <div className={accountNumber? "flex items-center sm:w-[256px] w-full":"flex items-center sm:w-[256px] w-full justify-center"}>
+              <img src={IbtcLogo} alt="" className="" onClick={() => navigate("/")}/>
 
               <div className="hidden sm:block max-w-full h-auto ">
                 <img src={ibtc} alt="" />
               </div>
             </div>
-          </div>
+          
 
-          <div className="hidden md:block ">
+          <div className="hidden lg:block ">
             <Dash />
           </div>
 
           <div>
             {accountNumber ? (
-              <div className="flex items-center gap-2 w-[263px] justify-end">
+              <div className="flex items-center gap-2  justify-end sm:w-[256px]">
                 <FaUserCircle size={35} />
                 <div className="">
                   <p className="text-[16px] font-semibold">{accountNumber}</p>
@@ -81,8 +91,9 @@ const Header = () => {
               </div>
             )}
           </div>
+          
         </header>
-      </div>
+      
     </>
   );
 };
