@@ -58,7 +58,7 @@ const Header = () => {
 
             </div>
             </div>
-        <header className="flex justify-between items-center w-full mx-auto">
+        <header className="flex justify-between items-center w-full mt-10 sm:mt-0 mx-auto">
           
             <div onClick={() => navigate("/")} className={accountNumber? "flex items-center sm:w-[256px] w-full":"flex items-center sm:w-[256px] w-full justify-center"}>
               <img src={IbtcLogo} alt="" className="" />
