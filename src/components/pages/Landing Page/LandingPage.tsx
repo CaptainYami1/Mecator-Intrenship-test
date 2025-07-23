@@ -8,7 +8,7 @@ import SectionTitle from "../../reuseables/SectionTitle";
 const LandingPage = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col h-screen sm:justify-between gap-10 sm:gap-0">
       <Header />
 
       <main className=" flex flex-col items-center justify-center gap-14 max-w-[463px] mx-auto text-center px-4">

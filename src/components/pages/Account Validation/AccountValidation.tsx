@@ -28,7 +28,7 @@ const AccountValidation = () => {
     navigate("/OTP", { state: accountInput });
   };
   return (
-    <div className="h-screen  sm:justify-between flex flex-col ">
+    <div className="sm:h-screen  sm:justify-between flex flex-col ">
       <Header />
 
       <main className="flex flex-col items-center  max-w-md md:w-[463px]  mx-auto text-center  mt-15 sm:mt-0 gap-4">

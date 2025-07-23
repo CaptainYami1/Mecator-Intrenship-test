@@ -75,7 +75,7 @@ const Header = () => {
 
           <div>
             {accountNumber ? (
-              <div className="flex items-center gap-2  justify-end sm:w-[256px]">
+              <div className="flex items-center gap-2  justify-end w-[256px]">
                 <FaUserCircle size={35} />
                 <div className="">
                   <p className="text-[16px] font-semibold">{accountNumber}</p>
