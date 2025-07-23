@@ -60,10 +60,10 @@ const Header = () => {
             </div>
         <header className="flex justify-between items-center w-full mx-auto">
           
-            <div className={accountNumber? "flex items-center sm:w-[256px] w-full":"flex items-center sm:w-[256px] w-full justify-center"}>
-              <img src={IbtcLogo} alt="" className="" onClick={() => navigate("/")}/>
+            <div onClick={() => navigate("/")} className={accountNumber? "flex items-center sm:w-[256px] w-full":"flex items-center sm:w-[256px] w-full justify-center"}>
+              <img src={IbtcLogo} alt="" className="" />
 
-              <div className="hidden sm:block max-w-full h-auto ">
+              <div className="hidden sm:block max-w-fnull h-auto ">
                 <img src={ibtc} alt="" />
               </div>
             </div>
