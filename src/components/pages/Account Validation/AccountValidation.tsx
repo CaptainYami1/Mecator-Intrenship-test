@@ -31,8 +31,8 @@ const AccountValidation = () => {
     <div className="h-screen  sm:justify-between flex flex-col ">
       <Header />
 
-      <main className="block items-center   mx-auto text-center  mt-15 sm:mt-0 gap-4">
-        <div className="flex flex-col items-center ">
+      <main className="flex flex-col items-center  max-w-md md:w-[463px]  mx-auto text-center  mt-15 sm:mt-0 gap-4">
+        <div className="flex flex-col items-center mb-30 w-full">
           <SectionTitle
             h2="Secure Card Activation"
             p="Please provide your Stanbic account number."
@@ -44,7 +44,7 @@ const AccountValidation = () => {
               id="accountNumber"
               type="text"
               inputMode="numeric"
-              className="w-100 border border-gray-300 rounded-md p-2 my-2"
+              className="w-full border border-gray-300 rounded-md p-2 my-2"
               placeholder="10 digit NUBAN"
               value={accountInput}
               onChange={handleInputChange}
@@ -68,9 +68,9 @@ const AccountValidation = () => {
             </p>
           </div>
         </div>
-        <div className="mt-30">
+        
           <Prybtn text="Continue" onClick={() => handleSubmit()} />
-        </div>
+        
       </main>
 
       <Footer />

@@ -11,7 +11,7 @@ const LandingPage = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-grow flex flex-col items-center justify-center gap-14 max-w-[463px] mx-auto text-center px-4">
+      <main className=" flex flex-col items-center justify-center gap-14 max-w-[463px] mx-auto text-center px-4">
         <img src={BlueCardBodyPics} alt="" />
 
         <div className="flex flex-col items-center gap-2">
