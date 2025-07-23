@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <div className="m-10 font-[Libre Franklin]">
+        <div className="mx-4 my-10 sm:m-10 font-[Libre Franklin]">
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/Account-Validation" element={<AccountValidation />} />

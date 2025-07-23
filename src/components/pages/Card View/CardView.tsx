@@ -8,7 +8,7 @@ import Card3 from "../../../assets/Card 3.png";
 import Card5 from "../../../assets/Card 5.png";
 import Card6 from "../../../assets/Card 6.png";
 import { BsDot } from "react-icons/bs";
-import Laptopsize from "./Modals/laptopsize";
+import Laptopsize from "./Modals/Modal";
 import { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";

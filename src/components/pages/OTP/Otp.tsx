@@ -19,55 +19,55 @@ const Otp = () => {
 
   return (
     <>
-      <div className="sm:h-screen  sm:justify-between flex flex-col w-full">
+      <div className="sm:h-screen  sm:justify-between flex flex-col ">
         <Header />
 
-        <main className=" items-center text-center mt-15 sm:mt-0 gap-4">
-          <div className="flex flex-col items-center w-full gap-9 mx-auto ">
+        <main className=" items-center text-center mt-15 sm:mt-0 gap-4 ">
+          <div className="flex flex-col items-center  gap-9 mx-auto ">
             <SectionTitle
               h2="Secure Card Activation"
               p="Enter OTP sent to registered phone number."
             />
 
-            <div className="text-start  mx-auto  ">
+            <div className="text-start">
               <label htmlFor="otp" className="mt-10  text-gray-950 font-medium">
                 One-Time Password {"{OTP}"}
               </label>
-              <div className="flex   items-center justify-between my-4 gap-4">
+              <div className="flex   items-center justify-between my-4 gap-4 max-w-full">
                 <input
                   type="text"
                   inputMode="numeric"
-                  className="w-11 h-11 bg-white shadow-md rounded-md p-2 text-center"
+                  className="max-w-11  bg-white shadow-md rounded-md p-2 text-center"
                   title="otp"
                 />
                 <input
                   type="text"
                   inputMode="numeric"
-                  className="w-11 h-11 bg-white shadow-md rounded-md p-2 text-center"
+                  className="max-w-11 max-h-11 bg-white shadow-md rounded-md p-2 text-center"
                   title="otp"
                 />
                 <input
                   type="text"
                   inputMode="numeric"
-                  className="w-11 h-11 bg-white shadow-md rounded-md p-2 text-center"
+                  className="max-w-11 max-h-11 bg-white shadow-md rounded-md p-2 text-center"
                   title="otp"
                 />
                 <input
                   type="text"
                   inputMode="numeric"
-                  className="w-11 h-11 bg-white shadow-md rounded-md p-2 text-center"
+                  className="max-w-11 max-h-11 bg-white shadow-md rounded-md p-2 text-center"
                   title="otp"
                 />
                 <input
                   type="text"
                   inputMode="numeric"
-                  className="w-11 h-11 bg-white shadow-md rounded-md p-2 text-center"
+                  className="max-w-11 max-h-11 bg-white shadow-md rounded-md p-2 text-center"
                   title="otp"
                 />
                 <input
                   type="text"
                   inputMode="numeric"
-                  className="w-11 h-11 bg-white shadow-md rounded-md p-2 text-center"
+                  className="max-w-11 max-h-11 bg-white shadow-md rounded-md p-2 text-center"
                   title="otp"
                 />
               </div>

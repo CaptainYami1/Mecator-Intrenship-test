@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import checkmark from "../../../../assets/ChatGPT Image Jul 21, 2025, 09_01_49 PM.png";
 import Buttons from "./buttons";
 
-const Laptopsize = ({
+const Modal = ({
   closemodal,
   setCloseModal,
   pinStatus,
@@ -294,4 +294,4 @@ const Laptopsize = ({
   );
 };
 
-export default Laptopsize;
+export default Modal;
