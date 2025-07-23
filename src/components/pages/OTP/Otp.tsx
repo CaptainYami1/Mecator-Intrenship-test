@@ -3,7 +3,7 @@ import Prybtn from "../../reuseables/Prybtn";
 import Footer from "../../reuseables/Footer/Footer";
 import SectionTitle from "../../reuseables/SectionTitle";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { MyContext } from "../../../context/MyContext";
 
 const Otp = () => {
@@ -16,6 +16,8 @@ const Otp = () => {
     navigate("/Card-View");
     setAccountNumber(accountNumber);
   };
+
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   return (
     <>
@@ -42,6 +44,22 @@ const Otp = () => {
                     maxLength={1}
                     className="w-12 h-12 sm:w-14 sm:h-14 text-lg text-center border border-gray-300 rounded-md shadow-md"
                     title="otp"
+                    ref={(el) => { inputRefs.current[idx] = el; }}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      if (value && idx < 5) {
+                        inputRefs.current[idx + 1]?.focus();
+                      }
+                    }}
+                    onKeyDown={(e) => {
+                      if (
+                        e.key === "Backspace" &&
+                        !e.currentTarget.value &&
+                        idx > 0
+                      ) {
+                        inputRefs.current[idx - 1]?.focus();
+                      }
+                    }}
                   />
                 ))}
               </div>
