@@ -23,7 +23,7 @@ const Otp = () => {
         <Header />
 
         <main className=" items-center text-center mt-15 sm:mt-0 gap-4">
-          <div className="flex flex-col items-center max-w-[463px] w-full gap-9 mx-auto ">
+          <div className="flex flex-col items-center w-full gap-9 mx-auto ">
             <SectionTitle
               h2="Secure Card Activation"
               p="Enter OTP sent to registered phone number."
