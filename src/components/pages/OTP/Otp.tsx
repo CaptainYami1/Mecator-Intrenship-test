@@ -37,28 +37,28 @@ useEffect(() => {
 
   return (
     <>
-      <div className="h-screen justify-between flex flex-col m-10 gap-10">
+      <div className="h-screen justify-between flex flex-col m-5 sm:m-10 gap-10">
         <Header />
 
-        <main className="flex flex-col items-center mx-auto text-center mb-15  sm:pb-0">
+        <main className="flex flex-col items-center mx-auto text-center mb-15 max-w-120 sm:pb-0">
           <div className="flex flex-col items-center  gap-9 mx-auto">
             <SectionTitle
               h2="Secure Card Activation"
               p="Enter OTP sent to registered phone number."
             />
 
-            <div className="text-start">
+            <div className="text-start w-full ">
               <label htmlFor="otp" className="mt-10  text-gray-950 font-medium">
                 One-Time Password {"{OTP}"}
               </label>
-              <div className="flex items-center justify-center gap-2 sm:gap-3 my-4 flex-wrap">
+              <div className="grid grid-cols-6 my-2 gap-3">
                 {Array.from({ length: 6 }).map((_, idx) => (
                   <input
                     key={idx}
                     type="tel"
                     inputMode="numeric"
                     maxLength={1}
-                    className="py-1 min-w-10 max-w-11 text-lg text-center border border-gray-300 rounded-md shadow-md"
+                    className="w-12 aspect-square text-lg text-center border border-gray-300 rounded-md shadow-md"
                     title="otp"
                      pattern="[0-9]*"
                     ref={(el) => { inputRefs.current[idx] = el; }}
