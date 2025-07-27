@@ -34,7 +34,11 @@ useEffect(() => {
   }, 1000);
   return () => clearInterval(interval);
 }, []);
-
+const handleResend = () => {
+  setTimeLeft(60); // reset to 60 seconds or whatever value you use
+  setError(""); // clear any error
+  // Add any resend OTP API call here if needed
+};
   return (
     <>
       <div className="h-[90vh] justify-between flex flex-col m-5 sm:m-10 gap-10">
@@ -87,7 +91,7 @@ useEffect(() => {
                 <Prybtn text="Continue" onClick={() => handleSubmit()} />
                 <p className="text-gray-600">
                   Didn’t receive any OTP?{" "}
-                  <span className="text-[#0062e1] font-semibold">
+                  <span className="text-[#0062e1] font-semibold cursor-pointer hover:text-blue-400" onClick={handleResend}>
                     Click to resend
                   </span>
                 </p>
