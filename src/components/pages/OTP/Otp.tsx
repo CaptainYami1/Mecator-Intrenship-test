@@ -55,7 +55,7 @@ const handleResend = () => {
               <label htmlFor="otp" className="mt-10  text-gray-950 font-medium">
                 One-Time Password {"{OTP}"}
               </label>
-              <div className="grid grid-cols-6 my-2 gap-3">
+              <div className="grid grid-cols-6 my-2  gap-3">
                 {Array.from({ length: 6 }).map((_, idx) => (
                   <input
                     key={idx}
@@ -85,9 +85,9 @@ const handleResend = () => {
                 ))}
               </div>
               <p className="w-fit">{`00:${timeLeft.toString().padStart(2, "0")}`}</p>
-              <p className="mt-4 text-red-500">{error}</p>
+              <p className="text-red-500 h-4">{error}</p>
 
-              <div className=" flex flex-col items-center gap-4 mt-15">
+              <div className=" flex flex-col items-center gap-4 mt-9 sm:mt-24">
                 <Prybtn text="Continue" onClick={() => handleSubmit()} />
                 <p className="text-gray-600">
                   Didn’t receive any OTP?{" "}

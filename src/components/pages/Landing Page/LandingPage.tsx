@@ -9,13 +9,13 @@ const LandingPage = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="flex justify-between flex-col h-[90vh] m-10 ">
+      <div className="flex justify-between flex-col h-[90vh]  m-4 sm:m-10 ">
        
         <Header />
 
-        <main className="mx-auto text-center">
-          <div className="inline-block ">
-            <img src={BlueCardBodyPics} alt="" className=""/>
+        <main className="mx-auto text-center ">
+          <div className="inline-block mx-auto">
+            <img src={BlueCardBodyPics} alt="" className="mx-auto"/>
 
             <div className="my-12.5 ">
               <SectionTitle
