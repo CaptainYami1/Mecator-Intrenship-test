@@ -62,7 +62,7 @@ const Header = () => {
           
             <div onClick={() => navigate("/")} className={accountNumber ? "flex items-center sm:w-[256px] w-full":"flex items-center sm:w-[256px] w-full justify-center"}>
             <div className={pathname === "/" ? "flex flex-col justify-center sm:flex-row items-center" :"flex items-center"}>
-              <img src={IbtcLogo} alt="" className="w-[60px] mx-auto" />
+              <img src={IbtcLogo} alt="" className=" mx-auto" />
 
               <div className={pathname === "/"? "" :"hidden sm:block max-w-full h-auto"}>
 
