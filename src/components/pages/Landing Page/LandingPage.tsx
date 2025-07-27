@@ -9,7 +9,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="flex justify-between flex-col h-screen m-10 ">
+      <div className="flex justify-between flex-col h-[90vh] m-10 ">
        
         <Header />
 

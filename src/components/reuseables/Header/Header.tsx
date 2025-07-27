@@ -16,7 +16,7 @@ const Header = () => {
   const pathname = location.pathname;
   return (
     <>
-   
+   <header>
       <div className="sm:hidden">
         {pathname === "/Card-View" ? (<div className="w-max mx-auto md-hidden mb-3">
           <Dash />
@@ -58,7 +58,7 @@ const Header = () => {
 
             </div>
             </div>
-        <header className="flex justify-between items-center w-full mt-10 sm:mt-0 mx-auto">
+        <div className="flex justify-between items-center w-full mt-10 sm:mt-0 mx-auto">
           
             <div onClick={() => navigate("/")} className={accountNumber? "flex items-center sm:w-[256px] w-full":"flex items-center sm:w-[256px] w-full justify-center"}>
               <img src={IbtcLogo} alt="" className="" />
@@ -92,8 +92,8 @@ const Header = () => {
             )}
           </div>
           
-        </header>
-      
+        </div>
+      </header>
     </>
   );
 };
