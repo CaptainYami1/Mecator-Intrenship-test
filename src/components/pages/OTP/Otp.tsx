@@ -37,10 +37,10 @@ useEffect(() => {
 
   return (
     <>
-      <div className="sm:h-screen  sm:justify-between flex flex-col ">
+      <div className="h-screen justify-between flex flex-col m-10 gap-10">
         <Header />
 
-        <main className="  max-w-md md:w-[463px]  mx-auto items-center text-center mt-15 sm:mt-0 gap-4">
+        <main className="flex flex-col items-center mx-auto text-center mb-15  sm:pb-0">
           <div className="flex flex-col items-center  gap-9 mx-auto">
             <SectionTitle
               h2="Secure Card Activation"
