@@ -28,7 +28,7 @@ const AccountValidation = () => {
     navigate("/OTP", { state: accountInput });
   };
   return (
-    <div className="h-screen  justify-between flex flex-col m-10 ">
+    <div className="h-screen  justify-between gap-10 flex flex-col m-10 ">
       <Header />
 
       <main className="flex flex-col items-center mx-auto text-center gap-4 ">
@@ -38,7 +38,7 @@ const AccountValidation = () => {
             p="Please provide your Stanbic account number."
           />
 
-          <div className="text-start w-full  ">
+          <div className="text-start w-full">
             <h2 className="mt-10">Account Number</h2>
             <input
               id="accountNumber"
