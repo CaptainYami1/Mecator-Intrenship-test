@@ -28,10 +28,10 @@ const AccountValidation = () => {
     navigate("/OTP", { state: accountInput });
   };
   return (
-    <div className="h-screen  justify-between gap-10 flex flex-col m-10 ">
+    <div className="  justify-between gap-10 flex flex-col m-10 ">
       <Header />
 
-      <main className="flex flex-col items-center mx-auto text-center pb-30 sm:pb-0 ">
+      <main className="flex flex-col items-center mx-auto text-center mb-30 sm:pb-0 ">
         <div className="flex flex-col items-center mb-30 w-full">
           <SectionTitle
             h2="Secure Card Activation"
