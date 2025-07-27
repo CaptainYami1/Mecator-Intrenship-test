@@ -31,7 +31,7 @@ const AccountValidation = () => {
     <div className="h-screen  justify-between gap-10 flex flex-col m-10 ">
       <Header />
 
-      <main className="flex flex-col items-center mx-auto text-center my-5 sm:my-0 ">
+      <main className="flex flex-col items-center mx-auto text-center pb-30 sm:pb-0 ">
         <div className="flex flex-col items-center mb-30 w-full">
           <SectionTitle
             h2="Secure Card Activation"
