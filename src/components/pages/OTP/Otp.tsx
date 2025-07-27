@@ -58,7 +58,7 @@ useEffect(() => {
                     type="tel"
                     inputMode="numeric"
                     maxLength={1}
-                    className="p-1 w-11 text-lg text-center border border-gray-300 rounded-md shadow-md"
+                    className="py-1 min-w-10 max-w-11 text-lg text-center border border-gray-300 rounded-md shadow-md"
                     title="otp"
                      pattern="[0-9]*"
                     ref={(el) => { inputRefs.current[idx] = el; }}
