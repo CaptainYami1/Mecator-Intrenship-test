@@ -28,10 +28,10 @@ const AccountValidation = () => {
     navigate("/OTP", { state: accountInput });
   };
   return (
-    <div className="sm:h-screen  sm:justify-between flex flex-col ">
+    <div className="h-screen  justify-between flex flex-col m-10 ">
       <Header />
 
-      <main className="flex flex-col items-center  max-w-md md:w-[463px]  mx-auto text-center  mt-15 sm:mt-0 gap-4">
+      <main className="flex flex-col items-center mx-auto text-center gap-4 ">
         <div className="flex flex-col items-center mb-30 w-full">
           <SectionTitle
             h2="Secure Card Activation"
@@ -44,7 +44,7 @@ const AccountValidation = () => {
               id="accountNumber"
               type="text"
               inputMode="numeric"
-              className="w-full border border-gray-300 rounded-md p-2 my-2"
+              className="border border-gray-300 rounded-md p-2 my-2 w-full"
               placeholder="10 digit NUBAN"
               value={accountInput}
               onChange={handleInputChange}
