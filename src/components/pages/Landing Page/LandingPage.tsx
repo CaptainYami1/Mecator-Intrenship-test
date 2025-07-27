@@ -8,25 +8,32 @@ import SectionTitle from "../../reuseables/SectionTitle";
 const LandingPage = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col h-screen sm:justify-between gap-10 sm:gap-0">
-      <Header />
+    <>
+      <div className="flex justify-between flex-col h-screen bg-blue-800 m-10">
+        <div className="bg-green-500">
+        <Header />
+</div>
+        <main className="  bg-red-600 mx-auto">
+          <div className="bg-amber-700 inline-block max-w-[463px]">
+            <img src={BlueCardBodyPics} alt="" className=""/>
 
-      <main className=" flex flex-col items-center justify-center gap-14 max-w-[463px] mx-auto text-center px-4">
-        <img src={BlueCardBodyPics} alt="" />
+            <div className="my-12.5 ">
+              <SectionTitle
+                h2="Secure Card Activation"
+                p="Activate your card and choose a secure PIN for your transactions"
+              />
+            </div>
 
-        <div className="flex flex-col items-center gap-2">
-          <SectionTitle h2="Secure Card Activation" p="Activate your card and choose a secure PIN for your transactions"/>
-          
-        </div>
+            <Prybtn
+              text="Continue"
+              onClick={() => navigate("/Account-Validation")}
+            />
+          </div>
+        </main>
 
-        <Prybtn
-          text="Continue"
-          onClick={() => navigate("/Account-Validation")}
-        />
-      </main>
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

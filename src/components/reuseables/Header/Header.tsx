@@ -16,7 +16,7 @@ const Header = () => {
   const pathname = location.pathname;
   return (
     <>
-    
+   
       <div className="sm:hidden">
         {pathname === "/Card-View" ? (<div className="w-max mx-auto md-hidden mb-3">
           <Dash />

@@ -13,17 +13,20 @@ const Otp = () => {
   const { setAccountNumber } = useContext(MyContext)!;
 
   const[error, setError] = useState("")
-  const handleSubmit = () => {
+const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
+const handleSubmit = () => {
   const otp = inputRefs.current.map((input) => input?.value).join("");
   if (otp.length !== 6) {
-    setError("Please enter the full OTP.");
+    setError("Please enter the full OTP and try again.");
     return;
   }
+
   setAccountNumber(accountNumber);
   navigate("/Card-View");
 };
-  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
-  const [timeLeft, setTimeLeft] = useState(59);
+
+
+const [timeLeft, setTimeLeft] = useState(59);
 
 useEffect(() => {
   const interval = setInterval(() => {

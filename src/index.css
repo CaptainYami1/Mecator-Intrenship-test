@@ -1,28 +1,23 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   font-family: "Libre Franklin", sans-serif;
 }
 
 body {
-  background:#F9FAFB;
+  background: #f9fafb;
 }
 
 .gd-carousel-wrapper {
-    position:relative;
-
+  position: relative;
 }
 
 .gd-carousel {
-
-    .react-multiple-carousel__arrow {
-        position:fixed;
-        z-index: 10;
-    }
-
-   
-    
+  .react-multiple-carousel__arrow {
+    position: fixed;
+    z-index: 10;
+  }
 }
 
 @media (max-width: 768px) {
@@ -35,3 +30,10 @@ body {
   bottom: auto !important;
 }
 
+footer{
+  background-image: url("../src/assets/1df75510-b096-4cc2-84c3-4f7c1a0ef128_removalai_preview\ 1.png");
+  height: 13.75rem;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
