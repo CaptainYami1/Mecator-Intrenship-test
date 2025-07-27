@@ -59,7 +59,7 @@ const CardView = () => {
   // still update the current active slide
  
   return (
-    <div className="h-[100vh] justify-between flex flex-col m-5 sm:m-10 gap-10">
+    <div className="h-[90vh] sm:h-screen justify-between flex flex-col m-5 sm:m-10 gap-10">
       <Header />
 
       {/* Main fills remaining space without growing too much */}
@@ -163,9 +163,9 @@ const CardView = () => {
         />
       </div>
       {/* Footer (shrinks to content size) */}
-      
+      <div className="pb-10">
         <Footer />
-      
+      </div>
     </div>
   );
 };
