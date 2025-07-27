@@ -41,7 +41,7 @@ const handleResend = () => {
 };
   return (
     <>
-      <div className="h-[90vh] justify-between flex flex-col m-5 sm:m-10 gap-10">
+      <div className="h-screen sm:h-[90vh] justify-between flex flex-col m-5 sm:m-10 gap-10">
         <Header />
 
         <main className="flex flex-col items-center mx-auto text-center mb-15 max-w-120 sm:pb-0">

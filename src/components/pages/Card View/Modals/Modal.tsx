@@ -87,6 +87,7 @@ const Modal = ({
         if (pin1 !== pin2) {
           setTimeout(() => {
             setMobileError("PINs do not match");
+            setPin1Digits([]);
             setPin2Digits([]);
           }, 300);
 
