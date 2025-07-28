@@ -18,7 +18,7 @@ const Header = () => {
     <>
    <header>
       <div className="sm:hidden">
-        {pathname === "/Card-View" ? (<div className="w-max mx-auto md-hidden mb-3">
+        {pathname === "/Card-View" ? (<div className="w-max mx-auto md-hidden my-4">
           <Dash />
         </div>
         ): null}
@@ -28,13 +28,13 @@ const Header = () => {
             className={
               accountNumber
                 ? "justify-center sm:flex items-center gap-1.5   "
-                : "justify-items-center sm:flex items-center gap-1.5 w- "
+                : "justify-items-center sm:flex items-center gap-1.5 "
             }
           >
             <div
               className={
                 pathname === "/Card-View"
-                  ? "sm:flex justify-center mb-3  hidden"
+                  ? "sm:flex justify-center my-4  hidden"
                   : "flex items-center mb-3 sm:hidden w-full  justify-center  "
               }
             >
@@ -49,7 +49,7 @@ const Header = () => {
               </button>
               <div
                 className={
-                  pathname === "/Card-View" ? " flex justify-center w-full mb-3 md:hidden " : "mx-auto"
+                  pathname === "/Card-View" ? " flex justify-center w-full my-3 md:hidden " : "mx-auto"
                 }
               >
                 <Dash />
