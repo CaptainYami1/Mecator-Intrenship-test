@@ -44,8 +44,6 @@ const CardView = () => {
     masterUSDPin,
   } = useCard();
 
- 
-
   const cards = [
     { id: "verve-naira", image: Card1 },
     { id: "master-pounds", image: Card2 },
@@ -57,13 +55,13 @@ const CardView = () => {
   const activeCardId = cards[activeSlide]?.id;
 
   // still update the current active slide
- 
+
   return (
-    <div className="h-[90vh] sm:h-screen justify-between flex flex-col m-5 sm:m-10 gap-10">
+    <div className=" p-10 ">
       <Header />
 
       {/* Main fills remaining space without growing too much */}
-      <div className=" block items-center w-full  mx-auto text-center  mt-10 ">
+      <div className=" flex flex-col items-center justify-center h-[calc(100vh-350px)]  mx-auto text-center ">
         <SectionTitle
           h2="All Cards Linked"
           p="Kindly select the card you will like to be activated"
@@ -97,7 +95,10 @@ const CardView = () => {
                   <img
                     src={card.image}
                     alt={card.id}
-                    className="w-full h-auto object-contain shadow-lg shadow-gray-300 rounded-3xl"
+                    className="w-full z-50 mb-1 rounded-3xl"
+                    style={{
+                      boxShadow: "-8px 8px 15px rgba(0,0,0,0.2)"
+                    }}
                   />
                 </div>
               ))}
@@ -136,7 +137,7 @@ const CardView = () => {
           </div>
         </div>
 
-        <div className="max-w-[463px] px-5 flex flex-col items-center gap-4 mt-20 mx-auto">
+        <div className="max-w-[463px] w-full px-5 flex flex-col items-center gap-4 mt-20 mx-auto">
           <Prybtn
             text="Activate Card"
             onClick={() => setCloseModal(false)}
@@ -163,9 +164,8 @@ const CardView = () => {
         />
       </div>
       {/* Footer (shrinks to content size) */}
-      <div className="pb-10">
-        <Footer />
-      </div>
+
+      <Footer />
     </div>
   );
 };

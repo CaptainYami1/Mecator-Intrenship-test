@@ -28,11 +28,11 @@ const AccountValidation = () => {
     navigate("/OTP", { state: accountInput });
   };
   return (
-    <div className="  justify-between gap-10 flex flex-col m-10 h-[91vh]">
+    <div className="p-10 ">
       <Header />
 
-      <main className="flex flex-col items-center mx-auto text-center mb-15  sm:pb-0 ">
-        <div className="flex flex-col items-center mb-30 w-full">
+      <main className="flex flex-col items-center justify-center h-[calc(100vh-350px)] max-w-[380px] mx-auto text-center  sm:pb-0 ">
+        <div className="flex flex-col items-center mb-30 w-full ">
           <SectionTitle
             h2="Secure Card Activation"
             p="Please provide your Stanbic account number."

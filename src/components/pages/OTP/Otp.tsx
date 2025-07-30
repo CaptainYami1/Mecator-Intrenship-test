@@ -41,11 +41,11 @@ const handleResend = () => {
 };
   return (
     <>
-      <div className="h-screen sm:h-[90vh] justify-between flex flex-col m-5 sm:m-10 gap-10">
+      <div className=" p-10 ">
         <Header />
 
-        <main className="flex flex-col items-center mx-auto text-center mb-15 max-w-120 sm:pb-0">
-          <div className="flex flex-col items-center  gap-9 mx-auto">
+        <main className=" flex flex-col justify-center items-center h-[calc(100vh-350px)] mx-auto text-center max-w-120 sm:pb-0 ">
+          <div className="flex flex-col items-center  gap-9 ">
             <SectionTitle
               h2="Secure Card Activation"
               p="Enter OTP sent to registered phone number."
@@ -87,7 +87,7 @@ const handleResend = () => {
               <p className="w-fit">{`00:${timeLeft.toString().padStart(2, "0")}`}</p>
               <p className="text-red-500 h-4">{error}</p>
 
-              <div className=" flex flex-col items-center gap-4 mt-9 sm:mt-24">
+              <div className=" flex flex-col items-center gap-4 pt-9 sm:pt-24">
                 <Prybtn text="Continue" onClick={() => handleSubmit()} />
                 <p className="text-gray-600">
                   Didn’t receive any OTP?{" "}

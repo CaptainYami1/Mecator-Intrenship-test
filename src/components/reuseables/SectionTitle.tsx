@@ -6,7 +6,7 @@ const SectionTitle = (props:any) => {
     const pathname = location.pathname;
 
   return (
-    <div className={pathname === "/" ? "" : "min-w-[251px] px-11"}>
+    <div className={pathname === "/" ? "" : "min-w-[251px]"}>
         <h2 className="text-[24px] font-semibold">{props.h2}</h2>
           <p className="text-[15px]">
             {props.p}
