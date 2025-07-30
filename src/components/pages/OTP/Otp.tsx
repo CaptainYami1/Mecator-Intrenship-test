@@ -47,8 +47,8 @@ const handleResend = () => {
         <main className=" flex flex-col justify-center items-center h-[calc(100vh-350px)] mx-auto text-center max-w-120 sm:pb-0 ">
           <div className="flex flex-col items-center  gap-9 ">
             <SectionTitle
-              h2="Secure Card Activation"
-              p="Enter OTP sent to registered phone number."
+              title="Secure Card Activation"
+              subtitle="Enter OTP sent to registered phone number."
             />
 
             <div className="text-start w-full ">

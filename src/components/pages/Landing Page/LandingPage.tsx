@@ -13,14 +13,15 @@ const LandingPage = () => {
        
         <Header />
 
-        <main className="flex items-center justify-center h-[calc(100vh-150px)] max-w-120 mx-auto ">
-          <div className="inline-block mx-auto">
+        <main className="flex items-center justify-center h-[calc(100vh-150px)] max-w-[800px] mx-auto ">
+          <div className="flex flex-col items-center mx-auto">
             <img src={BlueCardBodyPics} alt="" className="mx-auto"/>
 
-            <div className="my-12.5 ">
+            <div className="my-17.5 text-center">
               <SectionTitle
-                h2="Secure Card Activation"
-                p="Activate your card and choose a secure PIN for your transactions"
+                title="Secure Card Activation"
+                subtitle="Activate your card and choose a secure PIN for your transactions"
+                small = {false}
               />
             </div>
 

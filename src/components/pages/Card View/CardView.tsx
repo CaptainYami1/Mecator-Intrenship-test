@@ -96,9 +96,6 @@ const CardView = () => {
                     src={card.image}
                     alt={card.id}
                     className="w-full z-50 mb-1 rounded-3xl"
-                    style={{
-                      boxShadow: "-8px 8px 15px rgba(0,0,0,0.2)"
-                    }}
                   />
                 </div>
               ))}

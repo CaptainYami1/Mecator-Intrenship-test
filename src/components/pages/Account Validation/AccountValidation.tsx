@@ -31,20 +31,20 @@ const AccountValidation = () => {
     <div className="p-10 ">
       <Header />
 
-      <main className="flex flex-col items-center justify-center h-[calc(100vh-350px)] max-w-[380px] mx-auto text-center  sm:pb-0 ">
+      <main className="flex flex-col items-center justify-center h-[calc(100vh-350px)] max-w-[360px] mx-auto text-center  sm:pb-0 ">
         <div className="flex flex-col items-center mb-30 w-full ">
           <SectionTitle
-            h2="Secure Card Activation"
-            p="Please provide your Stanbic account number."
+            title="Secure Card Activation"
+            subtitle="Please provide your Stanbic account number."
           />
 
-          <div className="text-start w-full">
-            <h2 className="mt-10">Account Number</h2>
+          <div className="text-start w-full flex flex-col gap-2">
+            <label htmlFor="accountNumber" className="mt-10 text-sm text-gray-950 inline-block">Account Number</label>
             <input
               id="accountNumber"
               type="text"
               inputMode="numeric"
-              className="border border-gray-300 rounded-md p-2 my-2 w-full"
+              className="border border-gray-300 bg-white rounded-lg p-3 text-[13.5px] w-full"
               placeholder="10 digit NUBAN"
               value={accountInput}
               onChange={handleInputChange}
