@@ -32,7 +32,7 @@ const AccountValidation = () => {
       <Header />
 
       <main className="flex flex-col items-center justify-center h-[calc(100vh-350px)] max-w-[360px] mx-auto text-center  sm:pb-0 ">
-        <div className="flex flex-col items-center mb-30 w-full ">
+        <div className="flex flex-col items-center mb-27.5 w-full ">
           <SectionTitle
             title="Secure Card Activation"
             subtitle="Please provide your Stanbic account number."
@@ -44,28 +44,22 @@ const AccountValidation = () => {
               id="accountNumber"
               type="text"
               inputMode="numeric"
-              className="border border-gray-300 bg-white rounded-lg p-3 text-[13.5px] w-full"
+              className="border border-gray-300 bg-white rounded-lg p-3 text-[13.5px] w-full outline-none"
               placeholder="10 digit NUBAN"
               value={accountInput}
               onChange={handleInputChange}
             />
-            {accountInput.length === 10 && (
-              <p className=" flex items-center gap-1.5 font-medium">
+            {accountInput.length === 10 ? (
+              <p className=" flex items-center gap-1.5 text-[11.5px] font-light h-3.5">
                 <span className="text-green-500">
                   <IoCheckmarkCircleSharp />
                 </span>{" "}
                 MARCUS RASHFORD
               </p>
-            )}
-            <p
-              className={
-                accountInput.length === 10
-                  ? "hidden"
-                  : " text-red-500 font-medium"
-              }
-            >
+            ):<p className=" text-red-500 text-[11.5px] font-light h-3.5">
               {errorMessage}
-            </p>
+            </p> }
+           
           </div>
         </div>
         

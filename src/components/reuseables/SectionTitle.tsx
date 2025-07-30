@@ -8,8 +8,8 @@ const SectionTitle = ({ title, subtitle, small = true }: any) => {
 
   return (
     <div className={pathname === "/" ? "" : "min-w-[251px]"}>
-      <h2 className={twMerge("text-[28px] font-semibold", small && "text-[24px] tracking-[-1px]")}>{title}</h2>
-      <p className={twMerge("text-[18px] ", small && "text-[15px] tracking-[-1px]")}>{subtitle}</p>
+      <h2 className={twMerge("text-[28px] text-[#1a314d] font-semibold", small && "text-[24px] tracking-[-1px]")}>{title}</h2>
+      <p className={twMerge("text-[18px] text-[#1a314d]", small && "text-[15px] tracking-[-1px]")}>{subtitle}</p>
     </div>
   );
 };

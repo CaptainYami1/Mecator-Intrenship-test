@@ -52,7 +52,7 @@ const handleResend = () => {
             />
 
             <div className="text-start w-full ">
-              <label htmlFor="otp" className="mt-10  text-gray-950 font-medium">
+              <label htmlFor="otp" className="mt-10  text-gray-950 text-sm font-medium">
                 One-Time Password {"{OTP}"}
               </label>
               <div className="grid grid-cols-6 my-2  gap-3">
@@ -62,7 +62,7 @@ const handleResend = () => {
                     type="tel"
                     inputMode="numeric"
                     maxLength={1}
-                    className="w-12 aspect-square text-lg text-center border border-gray-300 rounded-md shadow-md"
+                    className="w-12 aspect-square text-lg text-center border border-gray-300 rounded-md shadow-otp"
                     title="otp"
                      pattern="[0-9]*"
                     ref={(el) => { inputRefs.current[idx] = el; }}
@@ -84,12 +84,12 @@ const handleResend = () => {
                   />
                 ))}
               </div>
-              <p className="w-fit">{`00:${timeLeft.toString().padStart(2, "0")}`}</p>
+              <p className="text-gray-600 text-[14.5px] tracking-[-0.6]">{`00:${timeLeft.toString().padStart(2, "0")}`}</p>
               <p className="text-red-500 h-4">{error}</p>
 
-              <div className=" flex flex-col items-center gap-4 pt-9 sm:pt-24">
+              <div className=" flex flex-col items-center gap-4 pt-21">
                 <Prybtn text="Continue" onClick={() => handleSubmit()} />
-                <p className="text-gray-600">
+                <p className="text-gray-600 tracking-[-0.6] text-[14.5px]">
                   Didn’t receive any OTP?{" "}
                   <span className="text-[#0062e1] font-semibold cursor-pointer hover:text-blue-400" onClick={handleResend}>
                     Click to resend
