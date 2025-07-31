@@ -9,12 +9,12 @@ const LandingPage = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="px-4 sm:px-10 p-5 m-auto w-full max-w-[1440px]">
+      <div className="px-4 sm:px-10 py-5 sm:py-10 m-auto w-full max-w-[1440px]">
        
         <Header />
 
         <main className="flex items-center mt-[52px] max-h-[845px]  sm:max-h-none sm:mt-0 sm:justify-center h-[calc(100vh-245px)]  sm:h-[calc(100vh-150px)] mx-auto ">
-          <div className="flex flex-col items-center mx-auto h-full ">
+          <div className="flex flex-col items-center mx-auto h-full justify-start sm:justify-center ">
             <img src={BlueCardBodyPics} alt="" className="mx-auto max-w-[275px] w-full sm:max-w-none"/>
 
             <div className="my-17.5 text-center ">
