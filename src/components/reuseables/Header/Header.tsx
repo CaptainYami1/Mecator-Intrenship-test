@@ -61,7 +61,7 @@ const Header = () => {
         <div className="flex justify-between items-center w-full mx-auto">
           
             <div onClick={() => navigate("/")} className={accountNumber ? "flex items-center sm:w-[256px] w-full":"flex items-center sm:w-[256px] w-full justify-center"}>
-            <div className={pathname === "/" ? "flex flex-col justify-center sm:flex-row items-center" :"flex items-center"}>
+            <div className={pathname === "/" ? "flex flex-col gap-2.5 sm:gap-0 justify-center sm:flex-row items-center" :"flex items-center"}>
               <img src={IbtcLogo} alt="" className=" mx-auto" />
 
               <div className={pathname === "/"? "" :"hidden sm:block max-w-full h-auto"}>
