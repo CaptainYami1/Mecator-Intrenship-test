@@ -58,11 +58,11 @@ const CardView = () => {
   // still update the current active slide
 
   return (
-    <div className="px-4 sm:px-10 p-10 m-auto  max-w-[1440]">
+    <div style={{ backgroundPosition: 'right 40px bottom 40px' }} className="p-10 px-4 sm:px-10 m-auto  max-w-[1440] bg-none md:bg-[url('/src/assets/1df75510-b096-4cc2-84c3-4f7c1a0ef128_removalai_preview%201.png')] bg-no-repeat bg-size-[220px] bg-position-[bottom_right_40px] ">
       <Header />
 
       {/* Main fills remaining space without growing too much */}
-      <div className=" flex flex-col items-center pt-10  md:justify-center h-[calc(100vh-164px)] md:h-[calc(100vh-350px)]   mx-auto text-center ">
+      <div className=" flex flex-col items-center pt-10  mb-10 h-[calc(100vh-164px)] md:h-[calc(100vh-190px)]   mx-auto text-center ">
         <SectionTitle
           title="All Cards Linked"
           subtitle="Kindly select the card you will like to be activated"

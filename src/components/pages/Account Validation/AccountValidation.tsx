@@ -28,10 +28,10 @@ const AccountValidation = () => {
     navigate("/OTP", { state: accountInput });
   };
   return (
-    <div className="p-10 px-4 sm:px-10 m-auto  max-w-[1440]">
+    <div style={{ backgroundPosition: 'right 40px bottom 40px' }} className="p-10 px-4 sm:px-10 m-auto  max-w-[1440] bg-[url('/src/assets/1df75510-b096-4cc2-84c3-4f7c1a0ef128_removalai_preview%201.png')] bg-no-repeat bg-size-[220px] bg-position-[bottom_right_40px] ">
       <Header />
 
-      <main className="flex flex-col items-center pt-[20px] sm:pt-0 sm:justify-center h-[calc(100vh-324px)] sm:h-[calc(100vh-350px)] max-w-[360px] mx-auto text-center   ">
+      <main className="flex flex-col items-center pt-[20px] sm:pt-0 sm:justify-center h-[calc(100vh-189px)] sm:h-[calc(100vh-150px)] max-w-[360px] mx-auto text-center   ">
         <div className="flex flex-col items-center mb-[75px] sm:mb-24.5 w-full ">
           <SectionTitle
             title="Secure Card Activation"
