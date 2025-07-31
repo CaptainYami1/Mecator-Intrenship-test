@@ -62,7 +62,7 @@ const CardView = () => {
       <Header />
 
       {/* Main fills remaining space without growing too much */}
-      <div className=" flex flex-col items-center pt-10  lg:my-10 md:justify-center h-[calc(100vh-164px)] md:h-[calc(100vh-350px)]   mx-auto text-center ">
+      <div className=" flex flex-col items-center pt-10  md:justify-center h-[calc(100vh-164px)] md:h-[calc(100vh-350px)]   mx-auto text-center ">
         <SectionTitle
           title="All Cards Linked"
           subtitle="Kindly select the card you will like to be activated"
