@@ -196,7 +196,7 @@ const Modal = ({
 
           {/*Mobile */}
           <div className="fixed justify-center content-end w-auto  top-0 left-0 right-0 bottom-0 z-50 sm:hidden  ">
-            <div className="bg-white  content-end rounded-t-2xl   py-4  mx-auto flex flex-col ">
+            <div className="bg-white  content-end rounded-t-2xl   py-9.5  mx-auto flex flex-col ">
               <button
                 title="close"
                 className="p-1.5 w-fit mx-10 mb-4 border border-neutral-100 self-end rounded-md"
@@ -211,11 +211,11 @@ const Modal = ({
               </button>
               <div className="flex flex-col items-center">
                 <div className="text-center">
-                  <h2 className="mb-12.5 font-medium text-xl">
+                  <h2 className="mb-12.5 font-medium tracking-[-1%] text-xl">
                     {pin1Digits.length < 4 ? "Create PIN" : "Confirm PIN"}
                   </h2>
                   <div className="mb-15">
-                    <p className="font-medium text-sm mb-3">
+                    <p className="font-medium tracking-[-1%] text-sm mb-3">
                       {pin1Digits.length < 4 ? "Choose" : "Confirm"} 4-digit PIN
                     </p>
 

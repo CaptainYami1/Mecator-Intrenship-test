@@ -32,11 +32,7 @@ body {
   
 }
 
-@media (max-width: 1024px) {
-  .react-multi-carousel-dot-list{
-    display: none !important;
-  }
-}
+
 
 .react-multiple-carousel__arrow--right {
     right: calc(30% - 30px) !important;

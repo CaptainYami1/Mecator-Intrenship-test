@@ -18,6 +18,7 @@ const CardView = () => {
   const [closemodal, setCloseModal] = useState(true);
   const [pinStatus, setPinStatus] = useState(false);
 
+  
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -68,7 +69,7 @@ const CardView = () => {
         />
 
         <div className="items-center  mt-10 w-full   ">
-          <div className="gd-carousel-wrapper max-w-md mx-auto  ">
+          <div className="gd-carousel-wrapper max-w-md mx-auto ">
             <Carousel
               responsive={responsive}
               beforeChange={(index) => {
@@ -102,7 +103,7 @@ const CardView = () => {
             </Carousel>
           </div>
 
-          <div className="flex items-center justify-center gap-2 pt-6 lg:pt-14 text-center">
+          <div className="flex items-center justify-center gap-2 pt-12 text-center">
             <p className="text-[20px] text-[#1a314d] tracking-[-1] font-semibold ">
               {activeCardId === "verve-naira"
                 ? "Verve Blue Naira Debit Card"
