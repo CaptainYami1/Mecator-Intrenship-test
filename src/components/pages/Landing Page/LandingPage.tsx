@@ -13,7 +13,7 @@ const LandingPage = () => {
        
         <Header />
 
-        <main className="flex items-center justify-center h-[calc(100vh-184px)] max-w-[800px] mx-auto ">
+        <main className="flex items-center justify-center h-[calc(100vh-184px)] sm:h-[calc(100vh-150px)] max-w-[800px] mx-auto ">
           <div className="flex flex-col items-center mx-auto">
             <img src={BlueCardBodyPics} alt="" className="mx-auto"/>
 
