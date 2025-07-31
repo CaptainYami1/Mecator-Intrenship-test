@@ -7,7 +7,7 @@ import Card2 from "../../../assets/Card 2.png";
 import Card3 from "../../../assets/Card 3.png";
 import Card5 from "../../../assets/Card 5.png";
 import Card6 from "../../../assets/Card 6.png";
-import { BsDot } from "react-icons/bs";
+import { GoDotFill } from "react-icons/go";
 import Laptopsize from "./Modals/Modal";
 import { useState } from "react";
 import Carousel from "react-multi-carousel";
@@ -57,18 +57,18 @@ const CardView = () => {
   // still update the current active slide
 
   return (
-    <div className=" p-10 ">
+    <div className="px-4 sm:px-10 p-10 ">
       <Header />
 
       {/* Main fills remaining space without growing too much */}
-      <div className=" flex flex-col items-center justify-center h-[calc(100vh-350px)]  mx-auto text-center ">
+      <div className=" flex flex-col items-center pt-10  lg:my-10 md:justify-center h-[calc(100vh-164px)] md:h-[calc(100vh-350px)]   mx-auto text-center ">
         <SectionTitle
-          h2="All Cards Linked"
-          p="Kindly select the card you will like to be activated"
+          title="All Cards Linked"
+          subtitle="Kindly select the card you will like to be activated"
         />
 
         <div className="items-center  mt-10 w-full   ">
-          <div className="gd-carousel-wrapper max-w-md mx-auto">
+          <div className="gd-carousel-wrapper max-w-md mx-auto  ">
             <Carousel
               responsive={responsive}
               beforeChange={(index) => {
@@ -95,15 +95,15 @@ const CardView = () => {
                   <img
                     src={card.image}
                     alt={card.id}
-                    className="w-full z-50 mb-1 rounded-3xl"
+                    className="w-full z-50 mb-1 rounded-3xl max-w-[360px] max-h-[229px] flex flex-col place-self-center"
                   />
                 </div>
               ))}
             </Carousel>
           </div>
 
-          <div className="flex items-center justify-center gap-2 mt-8 text-center">
-            <p className="text-xl font-semibold ">
+          <div className="flex items-center justify-center gap-2 pt-6 lg:pt-14 text-center">
+            <p className="text-[20px] text-[#1a314d] tracking-[-1] font-semibold ">
               {activeCardId === "verve-naira"
                 ? "Verve Blue Naira Debit Card"
                 : activeCardId === "master-pounds"
@@ -122,19 +122,21 @@ const CardView = () => {
             (activeCardId === "platinum-usd" && platinumUSDPin) ||
             (activeCardId === "master-usd" && masterUSDPin) ? (
               <p className="text-[13.5px] font-medium py-0.5 pl-1.5 pr-2 flex items-center bg-green-100 border border-green-200 rounded-full text-green-700 gap-1.5 ">
-                <BsDot />
+                <div className="">
+                  <GoDotFill size={12} />
+                </div>
                 Active
               </p>
             ) : (
-              <p className="text-[13.5px] font-medium py-0.5 pl-1.5 pr-2 flex items-center bg-gray-100 border border-gray-200 rounded-full   ">
-                <BsDot />
+              <p className="text-[13.5px] gap-1 font-medium py-0.5 pl-1.5 pr-2 flex items-center bg-gray-100 border border-gray-200 rounded-full text-gray-700  ">
+                <GoDotFill size={12} className="text-gray-500" />
                 Inactive
               </p>
             )}
           </div>
         </div>
 
-        <div className="max-w-[463px] w-full px-5 flex flex-col items-center gap-4 mt-20 mx-auto">
+        <div className=" w-full px-5 flex flex-col items-center gap-4 mt-20 mx-auto">
           <Prybtn
             text="Activate Card"
             onClick={() => setCloseModal(false)}

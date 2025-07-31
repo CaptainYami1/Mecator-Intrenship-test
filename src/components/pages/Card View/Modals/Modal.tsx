@@ -151,12 +151,12 @@ const Modal = ({
               : "fixed justify-center w-auto  top-0 left-0 right-0 bottom-0 z-50 backdrop-blur-xs bg-gray-500/30 content-center"
           }
         >
-          <div className="hidden bg-white rounded-lg shadow-lg p-6 max-w-md mx-auto sm:flex flex-col gap-6">
+          <div className="hidden bg-white rounded-lg shadow-lg p-6 max-w-md mx-auto sm:flex flex-col gap-6 close">
             <div className="flex justify-between items-center ">
-              <h2 className="text-2xl font-medium ">Create PIN</h2>
+              <h2 className="text-2xl font-medium tracking-[-0.6]">Create PIN</h2>
               <button
                 title="close"
-                className="p-1.5 border border-neutral-100 rounded-md"
+                className="p-1.5  border-[#dee2e9] border-[0.7px] rounded-md"
                 onClick={() => setCloseModal(true)}
               >
                 <IoMdClose />
@@ -164,13 +164,13 @@ const Modal = ({
             </div>
 
             <div className="">
-              <label htmlFor="create-pin" className="font-medium text-sm">
+              <label htmlFor="create-pin" className="font-medium tracking-[-0.6%] text-sm">
                 Choose 4-digit PIN
               </label>
               <input
                 type="password"
                 ref={pin1Ref}
-                className="w-full mt-1 p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full text-sm mt-1 px-4 py-[13px] border border-[#ced5de] rounded-md outline-none "
                 placeholder="Enter 4-digit PIN"
                 maxLength={4}
                 onChange={handleInputChange}
@@ -178,20 +178,20 @@ const Modal = ({
             </div>
 
             <div className="">
-              <label htmlFor="confirm-pin" className="font-medium text-sm">
+              <label htmlFor="confirm-pin" className="font-medium text-sm tracking-[-0.6%]">
                 Confirm 4-digit PIN
               </label>
               <input
                 type="password"
                 ref={pin2Ref}
-                className="w-full mt-1 p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full text-sm mt-1 px-4 py-[13px] border border-[#ced5de] rounded-md outline-none "
                 placeholder="Enter 4-digit PIN"
                 maxLength={4}
                 onChange={handleInputChange}
               />
               <p className="text-red-500 mt-2">{error}</p>
             </div>
-            <Prybtn text="Confirm" onClick={handleSubmit} />
+            <Prybtn text="Confirm" onClick={handleSubmit} className="max-w-none"/>
           </div>
 
           {/*Mobile */}

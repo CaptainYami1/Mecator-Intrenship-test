@@ -18,7 +18,7 @@ const Header = () => {
     <>
    <header>
       <div className="sm:hidden">
-        {pathname === "/Card-View" ? (<div className="w-max mx-auto md-hidden my-4">
+        {pathname === "/Card-View" ? (<div className="w-max mx-auto md-hidden mb-7.5">
           <Dash />
         </div>
         ): null}
@@ -34,8 +34,8 @@ const Header = () => {
             <div
               className={
                 pathname === "/Card-View"
-                  ? "sm:flex justify-center my-4  hidden"
-                  : "flex items-center mb-3 sm:hidden w-full  justify-center  "
+                  ? "sm:flex justify-center mb-7.5  hidden"
+                  : "flex items-center mb-[35px] sm:hidden w-full  justify-center  "
               }
             >
               <button
@@ -49,7 +49,7 @@ const Header = () => {
               </button>
               <div
                 className={
-                  pathname === "/Card-View" ? " flex justify-center w-full my-3 md:hidden " : "mx-auto"
+                  pathname === "/Card-View" ? " flex justify-center w-full mb-7.5 md:hidden " : "mx-auto"
                 }
               >
                 <Dash />
@@ -80,13 +80,13 @@ const Header = () => {
             {accountNumber ? (
               <div className="flex items-center gap-2  justify-end w-[256px]">
                 <FaUserCircle size={35} />
-                <div className="">
-                  <p className="text-[16px] font-semibold">{accountNumber}</p>
-                  <p className="text-[12px] ">Marcus Rashford</p>
+                <div className="text-[#1a314d]">
+                  <p className="text-[13px] tracking-[-0.6px] sm:text-[16px] font-semibold ">{accountNumber}</p>
+                  <p className="text-[10px] sm:text-[12px] ">Marcus Rashford</p>
                 </div>
               </div>
             ) : (
-              <div className="hidden sm:flex items-center gap-2 w-[263px] justify-end">
+              <div className="hidden sm:flex items-center gap-2 text-gray-900 w-[263px] justify-end">
                 <img src={UserShieldicon} alt="" />
                 <span className=" text-sm font-semibold">
                   Secure Web Portal

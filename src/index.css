@@ -1,8 +1,9 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 * {
-  font-family: "Libre Franklin", sans-serif;
+  font-family: "Libre Franklin", sans-serif; 
 }
 
 body {
@@ -20,14 +21,29 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .react-multiple-carousel__arrow {
     display: none !important;
   }
 }
 
 .react-multi-carousel-dot-list {
-  bottom: auto !important;
+  bottom: -40px !important;
+  
+}
+
+@media (max-width: 1024px) {
+  .react-multi-carousel-dot-list{
+    display: none !important;
+  }
+}
+
+.react-multiple-carousel__arrow--right {
+    right: calc(30% - 30px) !important;
+}
+
+.react-multiple-carousel__arrow--left {
+    left: calc(30% - 30px) !important;
 }
 
 .extra {
@@ -39,4 +55,8 @@ body {
 .shadow-otp {
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08),
     0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+}
+
+.close {
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.02);
 }

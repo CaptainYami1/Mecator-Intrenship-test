@@ -41,10 +41,10 @@ const handleResend = () => {
 };
   return (
     <>
-      <div className=" p-10 ">
+      <div className=" p-10 px-4 sm:px-10">
         <Header />
 
-        <main className=" flex flex-col justify-center items-center h-[calc(100vh-350px)] mx-auto text-center max-w-120 sm:pb-0 ">
+        <main className=" flex flex-col items-center pt-[20px] sm:pt-0 sm:justify-center h-[calc(100vh-324px)] sm:h-[calc(100vh-350px)] mx-auto text-center max-w-120 sm:pb-0 ">
           <div className="flex flex-col items-center  gap-9 ">
             <SectionTitle
               title="Secure Card Activation"
@@ -52,7 +52,7 @@ const handleResend = () => {
             />
 
             <div className="text-start w-full ">
-              <label htmlFor="otp" className="mt-10  text-gray-950 text-sm font-medium">
+              <label htmlFor="otp" className="mt-10  text-gray-950 text-sm font-semibold tracking-[-1]" >
                 One-Time Password {"{OTP}"}
               </label>
               <div className="grid grid-cols-6 my-2  gap-3">
@@ -60,9 +60,8 @@ const handleResend = () => {
                   <input
                     key={idx}
                     type="tel"
-                    inputMode="numeric"
                     maxLength={1}
-                    className="w-12 aspect-square text-lg text-center border border-gray-300 rounded-md shadow-otp"
+                    className="max-w-12 w-full aspect-square text-lg text-center border border-gray-300 outline-none rounded-md shadow-otp"
                     title="otp"
                      pattern="[0-9]*"
                     ref={(el) => { inputRefs.current[idx] = el; }}
@@ -85,9 +84,9 @@ const handleResend = () => {
                 ))}
               </div>
               <p className="text-gray-600 text-[14.5px] tracking-[-0.6]">{`00:${timeLeft.toString().padStart(2, "0")}`}</p>
-              <p className="text-red-500 h-4">{error}</p>
+              <p className="text-red-500 h-4 text-[14.5px] tracking-[-0.6]">{error}</p>
 
-              <div className=" flex flex-col items-center gap-4 pt-21">
+              <div className=" flex flex-col items-center gap-4 pt-[70px] sm:pt-21">
                 <Prybtn text="Continue" onClick={() => handleSubmit()} />
                 <p className="text-gray-600 tracking-[-0.6] text-[14.5px]">
                   Didn’t receive any OTP?{" "}
