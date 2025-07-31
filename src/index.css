@@ -41,7 +41,10 @@ body {
   
 }
 
-
+.react-multi-carousel-dot--active button{
+  background-color: #0062e1 !important;
+  border: 1px solid #d1d5dc !important;
+}
 
 .react-multiple-carousel__arrow--right {
     right: calc(30% - 30px) !important;
