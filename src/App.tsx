@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <div className="font-[Libre Franklin]">
+       
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/Account-Validation" element={<AccountValidation />} />
@@ -17,7 +17,7 @@ function App() {
 
             <Route path="/Card-View" element={<CardView />} />
           </Routes>
-        </div>
+        
       </BrowserRouter>
     </>
   );

@@ -28,7 +28,7 @@ const AccountValidation = () => {
     navigate("/OTP", { state: accountInput });
   };
   return (
-    <div style={{ backgroundPosition: 'right 40px bottom 40px' }} className="p-10 px-4 sm:px-10 m-auto  max-w-[1440] bg-[url('/src/assets/1df75510-b096-4cc2-84c3-4f7c1a0ef128_removalai_preview%201.png')] bg-no-repeat bg-size-[220px] bg-position-[bottom_right_40px] ">
+    <div style={{ backgroundPosition: 'right 40px bottom 40px' }} className="p-10 px-4 sm:px-10 m-auto  max-w-[1440px] bg-[url('/src/assets/1df75510-b096-4cc2-84c3-4f7c1a0ef128_removalai_preview%201.png')] bg-no-repeat bg-size-[220px] bg-position-[bottom_right_40px] ">
       <Header />
 
       <main className="flex flex-col items-center pt-[20px] sm:pt-0 sm:justify-center h-[calc(100vh-189px)] sm:h-[calc(100vh-150px)] max-w-[360px] mx-auto text-center   ">

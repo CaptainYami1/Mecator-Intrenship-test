@@ -12,36 +12,38 @@ const Otp = () => {
   const accountNumber = state;
   const { setAccountNumber } = useContext(MyContext)!;
 
-  const[error, setError] = useState("")
-const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
-const handleSubmit = () => {
-  const otp = inputRefs.current.map((input) => input?.value).join("");
-  if (otp.length !== 6) {
-    setError("Please enter the full OTP and try again.");
-    return;
-  }
+  const [error, setError] = useState("");
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const handleSubmit = () => {
+    const otp = inputRefs.current.map((input) => input?.value).join("");
+    if (otp.length !== 6) {
+      setError("Please enter the full OTP and try again.");
+      return;
+    }
 
-  setAccountNumber(accountNumber);
-  navigate("/Card-View");
-};
+    setAccountNumber(accountNumber);
+    navigate("/Card-View");
+  };
 
+  const [timeLeft, setTimeLeft] = useState(59);
 
-const [timeLeft, setTimeLeft] = useState(59);
-
-useEffect(() => {
-  const interval = setInterval(() => {
-    setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
-  }, 1000);
-  return () => clearInterval(interval);
-}, []);
-const handleResend = () => {
-  setTimeLeft(60); // reset to 60 seconds or whatever value you use
-  setError(""); // clear any error
-  // Add any resend OTP API call here if needed
-};
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+  const handleResend = () => {
+    setTimeLeft(60); // reset to 60 seconds or whatever value you use
+    setError(""); // clear any error
+    // Add any resend OTP API call here if needed
+  };
   return (
     <>
-      <div style={{ backgroundPosition: 'right 40px bottom 40px' }} className="p-10 px-4 sm:px-10 m-auto  max-w-[1440] bg-[url('/src/assets/1df75510-b096-4cc2-84c3-4f7c1a0ef128_removalai_preview%201.png')] bg-no-repeat bg-size-[220px] bg-position-[bottom_right_40px] ">
+      <div
+        style={{ backgroundPosition: "right 40px bottom 40px" }}
+        className="p-10 px-4 sm:px-10 m-auto w-full max-w-[1440px] bg-[url('/src/assets/1df75510-b096-4cc2-84c3-4f7c1a0ef128_removalai_preview%201.png')] bg-no-repeat bg-size-[220px] bg-position-[bottom_right_40px] "
+      >
         <Header />
 
         <main className=" flex flex-col items-center pt-[20px] md:pt-0 md:justify-center h-[calc(100vh-189px)] sm:h-[calc(100vh-150px)] mx-auto text-center max-w-120 sm:pb-0 ">
@@ -52,7 +54,10 @@ const handleResend = () => {
             />
 
             <div className="text-start w-full ">
-              <label htmlFor="otp" className="mt-10  text-gray-950 text-sm font-semibold tracking-[-1]" >
+              <label
+                htmlFor="otp"
+                className="mt-10  text-gray-950 text-sm font-semibold tracking-[-1]"
+              >
                 One-Time Password {"{OTP}"}
               </label>
               <div className="grid grid-cols-6 my-2  gap-3">
@@ -63,8 +68,10 @@ const handleResend = () => {
                     maxLength={1}
                     className="max-w-12 w-full aspect-square text-lg text-center border border-gray-300 outline-none rounded-md shadow-otp"
                     title="otp"
-                     pattern="[0-9]*"
-                    ref={(el) => { inputRefs.current[idx] = el; }}
+                    pattern="[0-9]*"
+                    ref={(el) => {
+                      inputRefs.current[idx] = el;
+                    }}
                     onChange={(e) => {
                       const value = e.target.value;
                       if (/^\d$/.test(value) && idx < 5) {
@@ -83,14 +90,21 @@ const handleResend = () => {
                   />
                 ))}
               </div>
-              <p className="text-gray-600 text-[14.5px] tracking-[-0.6]">{`00:${timeLeft.toString().padStart(2, "0")}`}</p>
-              <p className="text-red-500 h-4 text-[14.5px] tracking-[-0.6]">{error}</p>
+              <p className="text-gray-600 text-[14.5px] tracking-[-0.6]">{`00:${timeLeft
+                .toString()
+                .padStart(2, "0")}`}</p>
+              <p className="text-red-500 h-4 text-[14.5px] tracking-[-0.6]">
+                {error}
+              </p>
 
               <div className=" flex flex-col items-center gap-4 pt-[70px] sm:pt-21">
                 <Prybtn text="Continue" onClick={() => handleSubmit()} />
                 <p className="text-gray-600 tracking-[-0.6] text-[14.5px]">
                   Didn’t receive any OTP?{" "}
-                  <span className="text-[#0062e1] font-semibold cursor-pointer hover:text-blue-400" onClick={handleResend}>
+                  <span
+                    className="text-[#0062e1] font-semibold cursor-pointer hover:text-blue-400"
+                    onClick={handleResend}
+                  >
                     Click to resend
                   </span>
                 </p>
