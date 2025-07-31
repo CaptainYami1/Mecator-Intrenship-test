@@ -21,6 +21,15 @@ body {
   }
 }
 
+.react-multiple-carousel__arrow {
+   background-color: rgba(0, 0, 0, 0.3) !important;
+   &:hover {
+   background-color: rgba(0, 0, 0, 0.6) !important;
+  }
+  }
+
+  
+
 @media (max-width: 1024px) {
   .react-multiple-carousel__arrow {
     display: none !important;
