@@ -58,7 +58,7 @@ const CardView = () => {
   // still update the current active slide
 
   return (
-    <div style={{ backgroundPosition: 'right 40px bottom 40px' }} className="p-10 px-4 sm:px-10 m-auto  max-w-[1440px] bg-none md:bg-[url('/src/assets/1df75510-b096-4cc2-84c3-4f7c1a0ef128_removalai_preview%201.png')] bg-no-repeat bg-size-[220px] bg-position-[bottom_right_40px] ">
+    <div style={{ backgroundPosition: 'right 40px bottom 40px' }} className="p-10 px-4 sm:px-10 m-auto  max-w-[1440px] bg-none md:bg-[url('/src/assets/1df75510-b096-4cc2-84c3-4f7c1a0ef128_removalai_preview%201.png')] bg-no-repeat bg-size-[135px] sm:bg-size-[150px] md:bg-size-[170px] lg:bg-size-[195px] xl:bg-size-[220px] bg-position-[bottom_right_40px] ">
       <Header />
 
       {/* Main fills remaining space without growing too much */}
