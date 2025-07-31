@@ -28,7 +28,7 @@ const AccountValidation = () => {
     navigate("/OTP", { state: accountInput });
   };
   return (
-    <div className="p-10 px-4 sm:px-10">
+    <div className="p-10 px-4 sm:px-10 m-auto  max-w-[1440]">
       <Header />
 
       <main className="flex flex-col items-center pt-[20px] sm:pt-0 sm:justify-center h-[calc(100vh-324px)] sm:h-[calc(100vh-350px)] max-w-[360px] mx-auto text-center   ">

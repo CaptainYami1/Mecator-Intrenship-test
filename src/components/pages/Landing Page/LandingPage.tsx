@@ -9,7 +9,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="px-4 sm:px-10 p-10 ">
+      <div className="px-4 sm:px-10 p-10 m-auto  max-w-[1440]">
        
         <Header />
 

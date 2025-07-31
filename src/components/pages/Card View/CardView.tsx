@@ -58,7 +58,7 @@ const CardView = () => {
   // still update the current active slide
 
   return (
-    <div className="px-4 sm:px-10 p-10 ">
+    <div className="px-4 sm:px-10 p-10 m-auto  max-w-[1440]">
       <Header />
 
       {/* Main fills remaining space without growing too much */}
